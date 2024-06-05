@@ -1,0 +1,11 @@
+.modal-dialog{
+    min-width: 60%;
+}
+
+form button{
+    text-align: right;
+}
+
+.error-message{
+    color: rgb(169, 51, 51);
+}

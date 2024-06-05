@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Stevetors</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end account" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/account/login']" routerLinkActive="router-link-active" >Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="login-contaner">
+    <div class="left">
+        <img src="../../../assets/images/account/sign-up.png" alt="">
+    </div>
+    <div class="right">
+      <h2>Register</h2>
+      <form #loginForm="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 input">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="enter firstName" required minlength="2" maxlength="20" [(ngModel)]="registerObj.firstName" #firstName="ngModel">
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error-message">
+                        <div *ngIf="firstName.errors?.['required']">firstName is required</div>
+                        <div *ngIf="firstName.errors?.['minlength']">firstName must be at least 2 characters long</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3 input">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="enter lastName" required minlength="2" maxlength="20" [(ngModel)]="registerObj.lastName" #lastName="ngModel">
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error-message">
+                        <div *ngIf="lastName.errors?.['required']">Last Name is required</div>
+                        <div *ngIf="lastName.errors?.['minlength']">Last Name must be at least 2 characters long</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 input">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="enter username" required minlength="4" maxlength="20" [(ngModel)]="registerObj.userName" #username="ngModel">
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error-message">
+                <div *ngIf="username.errors?.['required']">Username is required</div>
+                <div *ngIf="username.errors?.['minlength']">Username must be at least 4 characters long</div>
+            </div>
+        </div>
+    
+        <div class="mb-3 input">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="enter email" required [(ngModel)]="registerObj.email" #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['email']">Invalid email format</div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 input">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="enter password" [(ngModel)]="registerObj.password" required minlength="6" #password="ngModel">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+                        <div *ngIf="password.errors?.['required']">Password is required</div>
+                        <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="mb-3 input">
+                    <label for="password_repeat" class="form-label">Repeat Password</label>
+                    <input type="password" class="form-control" id="password_repeat" name="password_repeat" placeholder="repeat password" [(ngModel)]="registerObj.password_repeat" required minlength="6" #password_repeat="ngModel">
+                    <div *ngIf="password_repeat.invalid && (password_repeat.dirty || password_repeat.touched)" class="error-message">
+                        <div *ngIf="password_repeat.errors?.['required']">Repeat Password is required</div>
+                        <div *ngIf="password_repeat.errors?.['minlength']">Repeat Password must be at least 6 characters long</div>
+                        <div *ngIf="!passwordsMatch" class="error-message">Passwords do not match</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+    
+        <div class="mb-3 input password-reset">
+            <p>Already have an account?</p>
+            <a href="#" [routerLink]="['/account/login']" routerLinkActive="router-link-active" >Login</a>
+        </div>
+    
+        <button type="submit" class="submit-btn btn-primary" [disabled]="loginForm.invalid" [ngClass]="{'light-bg': loginForm.invalid}" (click)="OnSubmit()">Register</button>
+    </form>
+    
+      <div class="socials">
+        <a href="#"><img src="../../../assets/images/account/google.png" alt=""></a>
+        <a href="#"><img src="../../../assets/images/account/git.png" alt=""></a>
+        <a href="#"><img src="../../../assets/images/account/linkedln.png" alt=""></a>
+      </div>
+    </div>
+</div>
+  

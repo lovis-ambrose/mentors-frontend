@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body" >
+      <img src="assets/images/avatar/avatar.jpg" alt="profile pic">
+      <h6>firstName: <strong>{{ userDetails.firstName }}</strong></h6>
+      <h6>lastName: <strong>{{ userDetails.lastName }}</strong></h6>
+      <p>Email: <strong>{{ userDetails.email }}</strong></p>
+      <p>UserName: <strong>{{ userDetails.username }}</strong></p>
+      <p>Role: <strong>{{ userDetails.roleCode }}</strong></p>
+      <div class="buttons">
+        <button type="button" class="btn btn-danger" (click)="logOut()">Log Out</button>
+        <button type="button" class="btn btn-primary" (click)="goHome()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<!-- Profile Modal -->
+<!-- <div class="modal fade" #profileModal id="profile" tabindex="-1" aria-labelledby="profileLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="assets/images/avatar/avatar.jpg" alt="profile pic">
+        <h6>firstName: <strong>{{ userDetails.firstName }}</strong></h6>
+        <h6>lastName: <strong>{{ userDetails.lastName }}</strong></h6>
+        <p>Email: <strong>{{ userDetails.email }}</strong></p>
+        <p>UserName: <strong>{{ userDetails.username }}</strong></p>
+        <p>Role: <strong>{{ userDetails.roleCode }}</strong></p>
+        <div class="buttons">
+          <button type="button" class="btn btn-danger" (click)="logOut()">Log Out</button>
+          <button type="button" class="btn btn-primary" (click)="goHome()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

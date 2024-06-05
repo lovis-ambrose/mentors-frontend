@@ -1,0 +1,121 @@
+.modal {
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-dialog {
+    max-width: 80%;
+}
+
+.left{
+    width: 354px;
+    height: 480px;
+    top: 163px;
+    left: 208px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.right h2{
+    width: 358px;
+    height: 45px;
+    top: 163px;
+    left: 588px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
+    text-align: left;
+}
+
+.right h4{
+    width: 324px;
+    height: 30px;
+    top: 199px;
+    left: 588px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}
+
+.right .rating{
+    display: flex;
+    flex-direction: row;
+}
+
+.right .rating ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.right .rating ul li{
+    list-style: none;
+}
+
+.right .rating p{
+    width: 126px;
+    height: 24px;
+    top: 232px;
+    left: 586px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.right .rating ul{
+    width: 126px;
+    top: 234px;
+    left: 723px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.right .rating i{
+    color: #FF8845;
+}
+
+.right .about{
+    width: 520px;
+    top: 275px;
+    left: 587px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.right .counter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .counter p{
+    font-family: Poppins;
+    font-weight: 400;
+    margin: 0 20px;
+}
+
+.right .counter span{
+    font-size: 48px;
+}
+
+.right .socials a{
+    font-size: 28px;
+    margin: 30px 20px;
+}

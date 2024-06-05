@@ -1,0 +1,16 @@
+<div class="mentors">
+    <div class="card" *ngFor="let mentor of mentors">
+        <div class="position-relative">
+            <img src="assets/images/mentors/cat1.png" alt="...">
+            <div class="icons">
+                <img src="assets/images/icons/user-add.png" alt="" title="send request" data-bs-toggle="modal" data-bs-target="#sendRequest">
+                <img src="assets/images/icons/user-octagon.png" alt="" title="about" data-bs-toggle="modal" data-bs-target="#menteeProfile">
+                <img src="assets/images/icons/row-vertical.png" alt="" title="posts">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{mentor.firstName}} {{mentor.lastName}}</h5>
+            <p>{{mentor.email}}</p>
+        </div>
+    </div>
+</div>

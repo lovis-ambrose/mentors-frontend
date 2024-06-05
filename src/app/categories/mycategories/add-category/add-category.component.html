@@ -1,0 +1,34 @@
+<!-- Send category Modal -->
+<div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="addCategoryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <form #categoryForm="ngForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Category Name</label>
+                    <input class="form-control" type="text" name="name" id="name" required [(ngModel)]="categoryObj.name" #name="ngModel" placeholder="name..">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+                      <div *ngIf="name.errors?.['required']">name is required</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Description</label>
+                    <textarea class="form-control" name="description" id="description" name="description" rows="5" required [(ngModel)]="categoryObj.description" #description="ngModel"></textarea>
+                    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="error-message">
+                      <div *ngIf="description.errors?.['required']">Description is required</div>
+                    </div>
+                </div>
+
+                <div *ngIf="errorMessage" class="error-message">
+                  {{ errorMessage }}
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid" [ngClass]="{'light-bg': categoryForm.invalid}" (click)="addCategory()">Add Category</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+/* .modal-dialog{
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    margin: 0; 
+    width: 25%;
+} */
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body img{
+    width: 100px;
+    height: 100px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons button{
+    margin: 10px;
+}

@@ -1,0 +1,25 @@
+.skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.skills .card{
+    border-radius: 20px;
+    border: 1px solid #e6e2e2;
+    margin: 10px;
+    width: 45%;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+
+.pagination a {
+    margin-right: 20px;
+    cursor: pointer;
+}  

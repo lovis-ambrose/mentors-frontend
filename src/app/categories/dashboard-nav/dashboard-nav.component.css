@@ -1,0 +1,31 @@
+.navbar-brand{
+    width: 172px;
+    height: 51px;
+    top: 11px;
+    left: 45px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50.67px;
+    color: #000000;
+    font-family: 'Rammetto One';
+}
+
+.search input, .search-item{
+    border-radius: 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #F7F3F3;
+    border: 1px solid #F2F2F2
+}
+
+.navbar-nav li i{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    left: 984px;
+    gap: 0px;
+    opacity: 0px;
+}

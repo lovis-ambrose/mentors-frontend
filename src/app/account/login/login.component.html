@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Stevetors</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end account" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/account/sign-up']" routerLinkActive="router-link-active" >Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="login-contaner">
+    <div class="left">
+        <img src="../../assets/images/account/login.png" alt="">
+    </div>
+    <div class="right">
+      <h2>Login</h2>
+      <form #loginForm="ngForm">
+
+        <div class="mb-3 input">
+          <label for="username" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="enter your username" required minlength="4" [(ngModel)]="loginObj.username" #username="ngModel">
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error-message">
+            <div *ngIf="username.errors?.['required']">Username is required</div>
+            <div *ngIf="username.errors?.['minlength']">Username must be at least 4 characters long</div>
+          </div>
+        </div>
+
+        <div class="mb-3 input">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="enter password" required minlength="6" [(ngModel)]="loginObj.password" #password="ngModel">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+            <div *ngIf="password.errors?.['required']">password is required.</div>
+            <div *ngIf="password.errors?.['minlength']">password must be at least 6 characters long.</div>
+          </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        
+        <div class="mb-3 input password-reset">
+          <p>forgot password?</p>
+          <a href="#">Reset</a>
+        </div>
+        <button type="submit" class="submit-btn btn-primary" [disabled]="loginForm.invalid" [ngClass]="{'light-bg': loginForm.invalid}" (click)="onLogin()">Log In</button>
+      </form>
+      <div class="socials">
+        <a href="#"><img src="../../../assets/images/account/google.png" alt=""></a>
+        <a href="#"><img src="../../../assets/images/account/git.png" alt=""></a>
+        <a href="#"><img src="../../../assets/images/account/linkedln.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  

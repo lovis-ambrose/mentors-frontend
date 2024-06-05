@@ -1,0 +1,20 @@
+<div>
+    <h4>Skills</h4>
+    <button class="btn btn-primary" *ngIf="isAdmin" data-bs-toggle="modal" data-bs-target="#addSkill">Add New</button>
+    <div class="skills">
+        <div class="card" *ngFor="let skill of displayedSkills">
+            <div class="card-body">
+                <h5 class="card-title">{{ skill.name }}</h5>
+                <p class="card-text">{{ skill.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination" *ngIf="showPagination">
+    <a class="paginate" (click)="goToPreviousPage()"><i class="fa-solid fa-angle-left"></i><i class="fa-solid fa-angle-left"></i></a>
+    <a *ngFor="let page of pages" [class.active]="currentPage === page" (click)="setCurrentPage(page)">{{ page }}</a>
+    <a class="paginate" (click)="goToNextPage()"><i class="fa-solid fa-angle-right"></i><i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+

@@ -1,0 +1,26 @@
+<!-- Send Request Modal -->
+<div class="modal fade" id="sendRequest" tabindex="-1" aria-labelledby="sendRequestLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <form #requestForm="ngForm">
+                <div class="mb-3">
+                    <label for="request" class="form-label">Send Request</label>
+                    <textarea class="form-control" id="question" name="question" rows="5" required [(ngModel)]="requestObj.question" #question="ngModel"></textarea>
+                    <div *ngIf="question.invalid && (question.dirty || question.touched)" class="error-message">
+                      <div *ngIf="question.errors?.['required']">Question is required</div>
+                    </div>
+                </div>
+
+                <div *ngIf="errorMessage" class="error-message">
+                  {{ errorMessage }}
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary" [disabled]="requestForm.invalid" [ngClass]="{'light-bg': requestForm.invalid}" (click)="onSendRequest()">Send Request</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

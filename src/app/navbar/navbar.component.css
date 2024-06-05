@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #d8d2d2;
+}
+.navbar-brand{
+    width: 172px;
+    height: 51px;
+    top: 11px;
+    left: 45px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50.67px;
+    color: #000000;
+    font-family: 'Rammetto One';
+}
+
+.btn{
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 20px;
+}
